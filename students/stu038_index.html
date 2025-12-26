@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵书毅的个人主页</title>
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 标题样式 */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 10px auto;
+        }
+
+        h2 {
+            color: #34495e;
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+
+        /* 头像样式 */
+        .avatar-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        /* 基本信息样式 */
+        .info-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+        }
+
+        .info-container p {
+            margin: 10px 0;
+            font-size: 1.05rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: #2980b9;
+            cursor: default;
+        }
+
+        /* 个人简介样式 */
+        .intro-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+        }
+
+        .intro-container p {
+            font-size: 1.05rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        /* 目标列表样式 */
+        .goals-container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .goals-container ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .goals-container li {
+            margin: 12px 0;
+            font-size: 1.05rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .goals-container li::before {
+            content: "✓";
+            color: #2ecc71;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .goals-container li:hover {
+            color: #3498db;
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            color: #7f8c8d;
+            padding: 20px 0;
+            border-top: 1px solid #ecf0f1;
+            margin-top: 40px;
+            font-size: 0.95rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .avatar {
+                width: 150px;
+                height: 150px;
+            }
+
+            .info-container,
+            .intro-container,
+            .goals-container {
+                padding: 15px;
+            }
+
+            .tag {
+                padding: 3px 10px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+<style></style></head>
+<body>
+    <h1>赵书毅</h1>
+
+    <!-- 头像 -->
+    <div class="avatar-container">
+        <img
+            src="https://c-ssl.dtstatic.com/uploads/blog/202502/06/YxSzNd3WHqEVQQO.thumb.400_0.jpeg"
+            alt="赵书毅的头像"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div class="info-container">
+        <p><strong>班级：</strong>七年级六班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">编程</span>
+            <span class="tag">羽毛球</span>
+            <span class="tag">阅读</span>
+        </p>
+        <p><strong>座右铭：</strong>代码改变世界</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="intro-container">
+        <h2>个人简介</h2>
+        <p>
+            我是七年级六班的学生（已修正班级一致性），正在系统学习信息技术课程。
+            我对计算机编程抱有浓厚的兴趣，尤其喜欢探索代码背后的逻辑与创造力。
+            在课余时间，我不仅会练习羽毛球强健体魄，也会阅读各类书籍拓宽视野。
+            未来，我希望通过持续学习和实践，不断提升自己的技术能力，用代码创造更多有价值的事物。
+        </p>
+    </div>
+
+    <!-- 短期目标 -->
+    <div class="goals-container">
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>熟练掌握一门编程语言（如Python）的基础语法</li>
+            <li>完成1-2个简单的编程小项目（如计算器、小游戏）</li>
+            <li>信息技术课程成绩保持优秀</li>
+            <li>坚持每周至少3次羽毛球训练</li>
+            <li>每月阅读1本课外书籍并做好读书笔记</li>
+            <li>结交志同道合的编程伙伴，共同进步</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 赵书毅的个人主页 | 保持热爱，奔赴山海
+    </footer>
+
+
+
+</body>
+</html>

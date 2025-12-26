@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高晏凯的个人主页</title>
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            scroll-behavior: smooth; /* 平滑滚动 */
+        }
+
+        body {
+            background: linear-gradient(120deg, #f5f7fa 0%, #e8f4f8 100%); /* 渐变背景 */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto; /* 页面居中 */
+            min-height: 100vh; /* 占满视口高度 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 头部标题样式 */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin: 20px 0 30px;
+            font-size: 2.5rem;
+            position: relative;
+            letter-spacing: 2px; /* 字间距 */
+            font-weight: 700;
+            /* 文字渐变 */
+            background: linear-gradient(90deg, #3498db, #9b59b6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 120px; /* 加长下划线 */
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #9b59b6); /* 渐变下划线 */
+            margin: 10px auto;
+            border-radius: 3px; /* 圆角下划线 */
+        }
+
+        h2 {
+            color: #34495e;
+            margin: 25px 0 15px;
+            font-size: 1.8rem;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        /* 给h2添加小图标装饰 */
+        h2::before {
+            content: "✨";
+            margin-right: 8px;
+        }
+
+        /* 头像样式 */
+        .avatar-container {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%; /* 圆形头像 */
+            object-fit: cover; /* 保持图片比例 */
+            border: 5px solid #fff;
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.3); /* 淡蓝色阴影 */
+            transition: all 0.3s ease; /* 悬停动画 */
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 头像背景装饰 */
+        .avatar-container::before {
+            content: "";
+            position: absolute;
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            opacity: 0.2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            animation: pulse 3s infinite ease-in-out; /* 呼吸动画 */
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.05);
+                opacity: 0.3;
+            }
+        }
+
+        .avatar:hover {
+            transform: scale(1.05); /* 悬停放大 */
+            box-shadow: 0 0 25px rgba(52, 152, 219, 0.5); /* 加深阴影 */
+        }
+
+        /* 基本信息样式 */
+        .info-container, .intro-container, .goal-container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* 悬浮动画 */
+            border: 1px solid #f0f4f8; /* 淡边框 */
+        }
+
+        /* 卡片悬浮效果 */
+        .info-container:hover, .intro-container:hover, .goal-container:hover {
+            transform: translateY(-5px); /* 上移 */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* 加深阴影 */
+        }
+
+        .info-container p {
+            margin: 12px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 信息标签前的小图标 */
+        .info-container p strong::after {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 16px;
+            background-color: #ddd;
+            margin: 0 10px;
+        }
+
+        /* 标签样式 */
+        .tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #3498db, #6fa8dc); /* 渐变标签 */
+            color: #fff;
+            padding: 6px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(52, 152, 219, 0.2);
+        }
+
+        .tag:hover {
+            background: linear-gradient(90deg, #2980b9, #5b9bd5); /* 加深渐变 */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        /* 简介和目标样式 */
+        .intro-container p, .goal-container li {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8; /* 行高加大 */
+        }
+
+        /* 简介文字首行缩进 */
+        .intro-container p {
+            text-indent: 2em;
+        }
+
+        /* 列表样式 */
+        .goal-container ul {
+            list-style: none; /* 去掉默认列表符号 */
+            padding-left: 20px;
+        }
+
+        .goal-container li {
+            position: relative;
+            margin: 12px 0;
+            padding-left: 25px;
+            transition: color 0.3s ease;
+        }
+
+        .goal-container li:hover {
+            color: #3498db; /* 悬停文字变色 */
+        }
+
+        .goal-container li::before {
+            content: "✓"; /* 自定义列表符号 */
+            color: #2ecc71;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #f0f9f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .goal-container li:hover::before {
+            background-color: #2ecc71;
+            color: #fff;
+            transform: scale(1.2);
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            color: #666;
+            padding: 25px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: auto; /* 页脚置底 */
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* 动态文字效果（可选，可根据需要开启） */
+        .dynamic-text {
+            display: inline-block;
+            animation: blink 2s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.7;
+            }
+        }
+
+        /* 响应式设计：适配手机端 */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 1px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .avatar {
+                width: 150px;
+                height: 150px;
+            }
+
+            .avatar-container::before {
+                width: 160px;
+                height: 160px;
+            }
+
+            .info-container p, .intro-container p, .goal-container li {
+                font-size: 1rem;
+            }
+
+            .info-container, .intro-container, .goal-container {
+                padding: 20px;
+            }
+
+            .tag {
+                padding: 5px 12px;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+<style></style></head>
+<body>
+    <!-- 标题 -->
+    <h1>高晏凯</h1>
+
+    <!-- 头像 -->
+    <div class="avatar-container">
+        <img
+            src="https://c-ssl.dtstatic.com/uploads/blog/202206/13/20220613205420_36395.thumb.400_0.png"
+            alt="个人头像"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div class="info-container">
+        <p><strong>班级：</strong>七年级404班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">撸猫</span>
+            <span class="tag">原神</span>
+        </p>
+        <p><strong>座右铭：</strong><span class="dynamic-text">出金不歪</span></p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="intro-container">
+        <h2>个人简介</h2>
+        <p>
+            我是七年级404班的学生，日常喜欢撸猫和玩原神，学习上始终保持积极的态度，希望能在期末考试中取得理想的高分，同时也能在游戏里收获更多快乐，做到学习和兴趣两不误。
+        </p>
+    </div>
+
+    <!-- 短期目标 -->
+    <div class="goal-container">
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>顺利完成期末考试，取得优异的成绩</li>
+            <li>原神抽卡成功出少女角色，实现"出金不歪"的心愿</li>
+            <li>持续提升自己的学习效率和游戏操作水平</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 高晏凯的个人主页 | 用心生活，努力前行
+    </footer>
+
+
+
+</body>
+</html>

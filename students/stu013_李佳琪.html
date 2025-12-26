@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李佳琪的个人主页</title>
+    <style>
+        /* 引入光遇风格字体 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Ma+Shan+Zheng&display=swap');
+
+        /* 全局样式 - 高饱和光遇色调 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 高饱和光遇渐变 - 晨岛暖橙+云野天蓝+禁阁淡紫 */
+            background: linear-gradient(135deg, #ffe6cc 0%, #ffb380 25%, #80d4ff 70%, #ccb3ff 100%);
+            min-height: 100vh;
+            padding: 30px 20px;
+            color: #203850;
+            line-height: 1.8;
+            /* 增强版云海粒子背景 */
+            background-image: 
+                radial-gradient(circle at 5% 15%, rgba(255, 255, 255, 0.3) 0px, transparent 20px),
+                radial-gradient(circle at 90% 70%, rgba(255, 255, 255, 0.3) 0px, transparent 20px),
+                radial-gradient(circle at 40% 85%, rgba(255, 255, 255, 0.25) 0px, transparent 25px);
+            background-attachment: fixed;
+            font-family: "Noto Sans SC", "思源柔黑", "微软雅黑 Light", sans-serif;
+            font-weight: 300;
+            /* 增强文字发光效果 */
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.9);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 光遇地图背景图案 - 高饱和线条 */
+        .sky-map-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none'%3E%3Cpath d='M20 100 Q60 60 100 100 T180 100' stroke='rgba(255,255,255,0.2)' stroke-width='1.5'/%3E%3Cpath d='M40 80 Q80 40 120 80 T160 80' stroke='rgba(255,255,255,0.18)' stroke-width='1.5'/%3E%3Cpath d='M30 120 Q70 80 110 120 T150 120' stroke='rgba(255,255,255,0.18)' stroke-width='1.5'/%3E%3Ccircle cx='100' cy='100' r='40' stroke='rgba(255,255,255,0.2)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150' fill='none'%3E%3Cpath d='M10 75 L75 10 L140 75 L75 140 Z' stroke='rgba(255,255,255,0.15)' stroke-width='1.5'/%3E%3Cpath d='M30 75 L75 30 L120 75 L75 120 Z' stroke='rgba(255,255,255,0.12)' stroke-width='1.5'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 400px 400px, 300px 300px;
+            opacity: 0.7;
+            z-index: 0;
+            animation: mapFloat 60s linear infinite;
+        }
+
+        @keyframes mapFloat {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-200px, -150px); }
+        }
+
+        /* 光遇特色装饰 - 高饱和鲲剪影 */
+        .sky-bg-decor {
+            position: fixed;
+            top: 10%;
+            right: 5%;
+            width: 200px;
+            height: 150px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 80' fill='rgba(255,255,255,0.25)'%3E%3Cpath d='M10 40 Q30 10 50 40 T90 40' stroke='rgba(255,255,255,0.4)' stroke-width='2.5' fill='none'/%3E%3Ccircle cx='20' cy='35' r='4'/%3E%3Ccircle cx='80' cy='35' r='4'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+            z-index: 0;
+            opacity: 0.8;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%,100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(-15px); }
+        }
+
+        /* 容器 - 高饱和光效 */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 28px;
+            padding: 50px;
+            /* 增强版阴影 - 更鲜艳的光影 */
+            box-shadow: 0 15px 50px rgba(255, 179, 128, 0.4),
+                        0 10px 30px rgba(128, 212, 255, 0.35),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            /* 高饱和星翼边框 */
+            border: 2px solid;
+            border-image: linear-gradient(135deg, #ffb380, #80d4ff, #ccb3ff) 1;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* 高饱和小地图标记 */
+        .container .map-mark {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Cpath d='M20 50 Q40 20 60 50 T80 50' stroke='rgba(128,212,255,0.45)' stroke-width='2.5'/%3E%3Ccircle cx='50' cy='50' r='15' stroke='rgba(255,179,128,0.55)' stroke-width='2' fill='rgba(255,179,128,0.2)'/%3E%3C/svg%3E") no-repeat;
+            background-size: contain;
+            opacity: 0.8;
+            z-index: 0;
+        }
+
+        /* 增强版烛火光效 */
+        .container::before {
+            content: "";
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 280px;
+            height: 280px;
+            /* 高饱和烛火渐变 */
+            background: radial-gradient(circle, rgba(255, 220, 180, 0.75) 0%, transparent 75%);
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.95;
+        }
+        .container::after {
+            content: "";
+            position: absolute;
+            bottom: -60px;
+            left: -60px;
+            width: 220px;
+            height: 220px;
+            /* 高饱和星芒渐变 */
+            background: radial-gradient(circle, rgba(128, 212, 255, 0.7) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            opacity: 0.9;
+        }
+
+        /* 标题样式 - 高饱和色调 */
+        h1 {
+            text-align: center;
+            /* 高饱和晨岛暖橙 */
+            color: #b36b33;
+            font-size: 3.2rem;
+            margin-bottom: 30px;
+            font-family: "Ma Shan Zheng", "Noto Sans SC", cursive;
+            font-weight: normal;
+            /* 增强版光晕 */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+                         0 0 20px rgba(255, 179, 128, 0.95),
+                         0 0 35px rgba(128, 212, 255, 0.9),
+                         0 0 50px rgba(204, 179, 255, 0.75);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 增强版烛火闪烁 */
+        h1::after {
+            content: "🕯️";
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 10px;
+            opacity: 0.9;
+            animation: flicker 3s ease-in-out infinite;
+        }
+
+        @keyframes flicker {
+            0%,100% { opacity: 0.9; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.15); }
+        }
+
+        h2 {
+            /* 高饱和云野天蓝 */
+            color: #3388bb;
+            margin: 35px 0 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid;
+            border-image: linear-gradient(to right, #ffb380, #80d4ff, transparent) 1;
+            font-family: "Noto Sans SC", sans-serif;
+            font-weight: 400;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 头像样式 - 增强版星翼光晕 */
+        .avatar-box {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar-box::before {
+            content: "✧";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            /* 高饱和星翼色 */
+            color: #ffb380;
+            text-shadow: 0 0 12px rgba(255, 179, 128, 0.9);
+            animation: spin 8s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: translateX(-50%) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        .avatar {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* 增强版发光边框 */
+            box-shadow: 0 0 15px rgba(255, 255, 255, 1),
+                        0 0 30px rgba(255, 179, 128, 0.95),
+                        0 0 50px rgba(128, 212, 255, 0.9),
+                        0 0 70px rgba(204, 179, 255, 0.75),
+                        inset 0 0 20px rgba(255, 255, 255, 0.98);
+            border: 6px solid rgba(255, 255, 255, 0.98);
+            transition: all 0.5s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.1) rotate(2deg);
+            /* 更强的hover光效 */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 1),
+                        0 0 40px rgba(255, 179, 128, 1),
+                        0 0 70px rgba(128, 212, 255, 0.95),
+                        0 0 90px rgba(204, 179, 255, 0.85),
+                        inset 0 0 25px rgba(255, 255, 255, 1);
+        }
+
+        /* 基本信息样式 - 高饱和强调色 */
+        .basic-info p {
+            font-size: 1.3rem;
+            margin: 15px 0;
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
+        }
+
+        .basic-info strong {
+            font-weight: 500;
+            /* 高饱和深橙 */
+            color: #995c26;
+        }
+
+        /* 高饱和魔法标签 */
+        .tag {
+            display: inline-block;
+            /* 高饱和渐变 */
+            background: linear-gradient(135deg, #ffe6cc 0%, #e6f5ff 100%);
+            color: #3388bb;
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            /* 增强版阴影 */
+            box-shadow: 0 6px 15px rgba(255, 179, 128, 0.4),
+                        0 3px 8px rgba(128, 212, 255, 0.35),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.95);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tag:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 179, 128, 0.5),
+                        0 5px 12px rgba(128, 212, 255, 0.45),
+                        inset 0 1px 0 rgba(255, 255, 255, 1);
+        }
+
+        /* 高饱和星翼标记 */
+        ul {
+            list-style: none;
+            padding-left: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        ul li {
+            margin: 15px 0;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        ul li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            /* 高饱和云野蓝 */
+            color: #4db3ff;
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px rgba(255, 179, 128, 0.95),
+                         0 0 20px rgba(128, 212, 255, 0.9);
+        }
+
+        /* 页脚样式 - 高饱和淡蓝 */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #55a3cc;
+            font-size: 1.1rem;
+            padding-top: 30px;
+            border-top: 1px solid;
+            border-image: linear-gradient(to right, transparent, #80d4ff, #ccb3ff, transparent) 1;
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .avatar {
+                width: 180px;
+                height: 180px;
+            }
+            .sky-bg-decor {
+                width: 150px;
+                height: 100px;
+            }
+            .container .map-mark {
+                width: 60px;
+                height: 60px;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+    </style>
+<style></style></head>
+
+<body>
+    <!-- 光遇地图背景图案 -->
+    <div class="sky-map-bg"></div>
+    
+    <!-- 光遇鲲装饰 -->
+    <div class="sky-bg-decor"></div>
+    
+    <div class="container">
+        <!-- 容器内小地图标记 -->
+        <div class="map-mark"></div>
+
+        <h1>李佳琪</h1>
+
+        <!-- 头像 -->
+        <div class="avatar-box">
+            <img
+                src="https://c-ssl.dtstatic.com/uploads/blog/202210/31/20221031223301_a52fc.thumb.1000_0.jpg"
+                alt="李佳琪的头像"
+                class="avatar">
+        </div>
+
+        <!-- 基本信息 -->
+        <div class="basic-info">
+            <p><strong>班级：</strong>七年级404班</p>
+            <p>
+                <strong>爱好：</strong>
+                <span class="tag">画画</span>
+                <span class="tag">听音乐</span>
+                <span class="tag">小说</span>
+            </p>
+            <p><strong>座右铭：</strong>顺其自然</p>
+        </div>
+
+        <!-- 个人简介 -->
+        <div>
+            <h2>个人简介</h2>
+            <p>
+                我是七年级404班的学生，正在学习信息技术课程。
+                我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+            </p>
+        </div>
+
+        <!-- 短期目标 -->
+        <div>
+            <h2>我的短期目标</h2>
+            <ul>
+                <li>目标一：每科成绩进步一些</li>
+                <li>目标二：提高身体素质</li>
+                <li>目标三：学习简单的编程知识</li>
+            </ul>
+        </div>
+
+        <footer>
+            © 2025 李佳琪的个人主页 · 光遇风格
+        </footer>
+    </div>
+
+
+
+</body>
+</html>

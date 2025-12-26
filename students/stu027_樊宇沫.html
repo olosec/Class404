@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樊宇沫的个人主页</title>
+    <style>
+        /* 全局样式重置和基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 标题样式 */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 25px 0 15px;
+            font-size: 1.5em;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+
+        /* 头像样式 */
+        .avatar {
+            display: block;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; /* 圆形头像 */
+            margin: 0 auto 30px;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover; /* 保证图片比例 */
+        }
+
+        /* 内容区块样式 */
+        div {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        /* 文本样式 */
+        p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: #2c3e50;
+        }
+
+        /* 标签样式（爱好） */
+        .tag {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+
+        /* 列表样式 */
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        ul li::before {
+            content: "✓";
+            color: #2ecc71;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            color: #7f8c8d;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eaeaea;
+            font-size: 0.9em;
+        }
+
+        /* 响应式适配（手机端） */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .avatar {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+<style></style></head>
+
+<body>
+    <h1>樊宇沫</h1>
+
+    <!-- 头像 -->
+    <div>
+        <img
+            src="https://ts1.tc.mm.bing.net/th/id/OIP-C._DLE3l9uBRFB26xSuj6GVQHaHZ?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="樊宇沫的头像"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div>
+        <p><strong>班级：</strong>七年级六班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">骑车</span>
+            <span class="tag">画画</span>
+            <span class="tag">阅读</span>
+        </p>
+        <p><strong>座右铭：</strong>不处，不谈，也不爱</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div>
+        <h2>个人简介</h2>
+        <p>
+            我是七年级六班的学生，正在学习信息技术课程。
+            我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+        </p>
+    </div>
+
+    <!-- 短期目标（新增） -->
+    <div>
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>目标一考好</li>
+            <li>目标二无</li>
+            <li>……</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 樊宇沫的个人主页
+    </footer>
+
+
+
+</body>
+</html>

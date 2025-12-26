@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘思宇的个人主页</title>
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        /* 页面主体渐变背景，设置最小高度为视口高度 */
+        body {
+            /* 淡蓝到深蓝的线性渐变，从左上到右下 */
+            background: linear-gradient(135deg, #e0f7fa, #01579b);
+            color: #002f6c; /* 深蓝色字体，提升可读性 */
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* 头像样式 */
+        .avatar {
+            width: 150px; /* 固定头像宽度 */
+            height: 150px; /* 固定头像高度 */
+            border-radius: 50%; /* 圆形头像 */
+            border: 4px solid #ffffff; /* 白色边框装饰 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 轻微阴影增加立体感 */
+            margin: 20px 0; /* 上下间距 */
+            object-fit: cover; /* 图片自适应裁剪，保持比例 */
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 2.5rem;
+            color: #0047ab; /* 更深的蓝色突出标题 */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* 文字阴影 */
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #00397a;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #b3e5fc; /* 浅蓝色下划线装饰 */
+            padding-bottom: 5px;
+            display: inline-block; /* 下划线宽度适配文字 */
+        }
+
+        /* 基本信息区域样式 */
+        .info-section {
+            background-color: rgba(255, 255, 255, 0.7); /* 半透明白色背景 */
+            padding: 20px;
+            border-radius: 12px; /* 圆角 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 阴影 */
+            margin: 20px 0;
+        }
+
+        /* 爱好标签样式 */
+        .tag {
+            display: inline-block;
+            background-color: #2196f3; /* 蓝色标签背景 */
+            color: white; /* 白色字体 */
+            padding: 5px 12px;
+            border-radius: 20px; /* 圆角标签 */
+            margin: 0 5px 5px 0;
+            font-size: 0.9rem;
+        }
+
+        /* 个人简介和目标区域样式 */
+        .intro-section, .goal-section {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        /* 目标列表样式 */
+        ul {
+            list-style: none; /* 去掉默认列表样式 */
+            padding-left: 10px;
+        }
+
+        li {
+            font-weight: bold; /* 目标标题加粗 */
+            margin: 10px 0 5px;
+            color: #00397a;
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center; /* 文字居中 */
+            margin-top: 30px;
+            padding: 15px;
+            background-color: rgba(0, 47, 108, 0.8); /* 深蓝半透明背景 */
+            color: white; /* 白色字体 */
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整，适配手机端 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+<style></style></head>
+<body>
+    <h1>刘思宇</h1>
+
+    <!-- 头像 -->
+    <div>
+        <img
+            src="https://c-ssl.dtstatic.com/uploads/blog/202302/01/20230201113159_787ac.thumb.400_0.jpeg"
+            alt="刘思宇"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div class="info-section">
+        <p><strong>班级：</strong>七年级一班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">打游戏</span>
+            <span class="tag">听歌</span>
+            <span class="tag">阅读</span>
+        </p>
+        <p><strong>座右铭：</strong>时间改变一切</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="intro-section">
+        <h2>个人简介</h2>
+        <p>
+            我是七年级一班的学生，正在学习信息技术课程。
+            我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+        </p>
+    </div>
+
+    <!-- 短期目标 -->
+    <div class="goal-section">
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>目标一：好好学习，夯实各科知识基础</li>
+            <li>目标二：探索编程入门，尝试完成简单的编程小项目</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 刘思宇的个人主页
+    </footer>
+
+
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李嘉麒的个人主页</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 背景渐变 + 全局样式 */
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* 容器 - 居中 + 卡片化 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* 头像样式 */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #4cc9f0;
+            box-shadow: 0 0 20px rgba(76, 201, 240, 0.5);
+            margin: 0 auto 30px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        /* 标题样式 */
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #4cc9f0, #72efdd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            color: #4cc9f0;
+            border-left: 4px solid #4cc9f0;
+            padding-left: 15px;
+        }
+
+        /* 基本信息样式 */
+        .info-section {
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        strong {
+            color: #72efdd;
+        }
+
+        /* 标签样式 */
+        .tag {
+            display: inline-block;
+            background: rgba(76, 201, 240, 0.2);
+            color: #4cc9f0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 0 8px 8px 0;
+            border: 1px solid #4cc9f0;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #4cc9f0;
+            color: #16213e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(76, 201, 240, 0.3);
+        }
+
+        /* 列表样式 */
+        ul {
+            list-style: none;
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #4cc9f0;
+            font-size: 1.2rem;
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 - 手机适配 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        /* 动画效果 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container > div {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .container > div:nth-child(1) { animation-delay: 0.1s; }
+        .container > div:nth-child(2) { animation-delay: 0.2s; }
+        .container > div:nth-child(3) { animation-delay: 0.3s; }
+        .container > div:nth-child(4) { animation-delay: 0.4s; }
+    </style>
+<style></style></head>
+
+<body>
+    <div class="container">
+        <!-- 头像 -->
+        <div>
+            <img
+                src="https://ts1.tc.mm.bing.net/th/id/R-C.5b21150ca7554f081015fc0e17e9bb57?rik=0%2bhUFnP6bKZNEg&riu=http%3a%2f%2fimg.leikeji.com%2fresource%2fimg%2fc2d03c5bc5e24e4a8f48fee293b2f588.jpg&ehk=1RfpmgTjlmBxvOmDLz3ZZ4CClys7ZYyda7Y%2bNphIERM%3d&risl=&pid=ImgRaw&r=0"
+                alt="李嘉麒的头像"
+                class="avatar">
+        </div>
+
+        <!-- 标题 -->
+        <h1>李嘉麒</h1>
+
+        <!-- 基本信息 -->
+        <div class="info-section">
+            <p><strong>班级：</strong>404</p>
+            <p>
+                <strong>爱好：</strong>
+                <span class="tag">看91</span>
+                <span class="tag">篮球</span>
+                <span class="tag">玩</span>
+            </p>
+            <p><strong>座右铭：</strong>91改变世界</p>
+        </div>
+
+        <!-- 个人简介 -->
+        <div>
+            <h2>个人简介</h2>
+            <p>
+                我是404班的学生，要好好玩。
+            </p>
+        </div>
+
+        <!-- 短期目标 -->
+        <div>
+            <h2>我的短期目标</h2>
+            <ul>
+                <li>目标91</li>
+                <li>目标看51</li>
+            </ul>
+        </div>
+
+        <footer>
+            © 2025 李嘉麒的个人主页
+        </footer>
+    </div>
+
+
+
+</body>
+</html>

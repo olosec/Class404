@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <title>张浩鑫的个人主页</title>
+<style></style></head>
+
+<body>
+
+    <h1>张浩鑫</h1>
+
+    <!-- 头像 -->
+    <div>
+        <img
+            src="https://c-ssl.duitang.com/uploads/blog/202208/19/20220819063205_7942d.jpeg"
+            alt="张浩鑫的头像"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div>
+        <p><strong>班级：</strong>七年级404班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">打乒乓</span>
+            <span class="tag">篮球</span>
+            <span class="tag">阅读</span>
+        </p>
+        <p><strong>座右铭：</strong>人生短短三万天，不服就干</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div>
+        <h2>个人简介</h2>
+        <p>
+            我是七年级404班的学生，正在学习信息技术课程。
+            我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+        </p>
+    </div>
+
+    <!-- 短期目标（新增） -->
+    <div>
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>年级前100</li>
+            <li>年级前50</li>
+            <li>……</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 张浩鑫的个人主页
+    </footer>
+
+
+
+
+</body>
+</html>美化一下，该帅一点
+你希望让这份个人主页变得更帅气、更有质感，我会通过 CSS 样式美化（包括布局、配色、字体、阴影等）来实现，同时保持页面结构清晰，视觉效果更出众。以下是美化后的完整代码：
+html
+预览
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张浩鑫的个人主页</title>
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* 优雅字体搭配，兼容不同设备 */
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            /* 浅灰色背景，避免纯白刺眼，更显高级 */
+            background-color: #f5f7fa;
+            /* 文字颜色更柔和，提升阅读体验 */
+            color: #333;
+            /* 页面内边距，避免内容贴边 */
+            padding: 20px;
+            /* 限制页面最大宽度，居中显示，适配大屏 */
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8; /* 行高优化，阅读更舒适 */
+        }
+
+        /* 头像样式 - 圆形+阴影+缩放效果，更精致 */
+        .avatar {
+            width: 160px; /* 头像尺寸适中 */
+            height: 160px;
+            border-radius: 50%; /* 圆形头像 */
+            object-fit: cover; /* 保持图片比例，不拉伸 */
+            border: 4px solid #fff; /* 白色边框，突出头像 */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 柔和阴影，增加立体感 */
+            margin: 20px 0; /* 上下间距 */
+            transition: transform 0.3s ease; /* 过渡动画，hover时缩放 */
+        }
+
+        .avatar:hover {
+            transform: scale(1.05); /* 鼠标悬浮时轻微放大，更有互动感 */
+        }
+
+        /* 标题样式 - 突出层级，更醒目 */
+        h1 {
+            color: #2c3e50; /* 深灰蓝色，更显沉稳 */
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #3498db; /* 蓝色下划线，增加辨识度 */
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #3498db; /* 蓝色标题，与h1呼应，层级清晰 */
+            font-size: 1.8em;
+            margin: 30px 0 15px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        h2::before {
+            content: ""; /* 左侧小竖线，增加设计感 */
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 4px;
+            height: 25px;
+            background-color: #3498db;
+        }
+
+        /* 标签样式 - 爱好标签更美观，突出重点 */
+        .tag {
+            display: inline-block;
+            background-color: #e3f2fd; /* 淡蓝色背景 */
+            color: #2196f3; /* 蓝色文字 */
+            padding: 5px 12px;
+            border-radius: 20px; /* 圆角标签 */
+            margin: 0 8px 8px 0;
+            font-size: 0.9em;
+            box-shadow: 0 2px 4px rgba(33, 150, 243, 0.1);
+        }
+
+        /* 内容容器样式 - 白色背景+阴影，突出内容区域 */
+        div {
+            background-color: #fff;
+            padding: 20px 25px;
+            border-radius: 10px; /* 圆角容器，更柔和 */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* 轻微阴影，增加层次感 */
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        div:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* 悬浮时阴影加深，更有质感 */
+        }
+
+        /* 列表样式 - 自定义项目符号，更美观 */
+        ul {
+            list-style: none; /* 隐藏默认列表符号 */
+            padding-left: 20px;
+        }
+
+        ul li {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        ul li::before {
+            content: "✔"; /* 用对勾代替默认圆点，更积极醒目 */
+            position: absolute;
+            left: -20px;
+            color: #3498db; /* 与标题颜色呼应 */
+            font-weight: bold;
+        }
+
+        /* 页脚样式 - 居中显示，更显规整 */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d; /* 浅灰色文字，不抢主体风头 */
+            font-size: 0.9em;
+            padding: 15px 0;
+        }
+
+        /* 强调文字样式 - 加粗+颜色，突出关键信息 */
+        strong {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>张浩鑫</h1>
+
+    <!-- 头像 -->
+    <div>
+        <img
+            src="https://c-ssl.duitang.com/uploads/blog/202208/19/20220819063205_7942d.jpeg"
+            alt="张浩鑫的头像"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div>
+        <p><strong>班级：</strong>七年级404班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">打乒乓</span>
+            <span class="tag">篮球</span>
+            <span class="tag">阅读</span>
+        </p>
+        <p><strong>座右铭：</strong>人生短短三万天，不服就干</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div>
+        <h2>个人简介</h2>
+        <p>
+            我是七年级404班的学生，正在学习信息技术课程。
+            我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+        </p>
+    </div>
+
+    <!-- 短期目标（新增） -->
+    <div>
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>年级前100</li>
+            <li>年级前50</li>
+            <li>……</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 张浩鑫的个人主页
+    </footer>
+
+
+
+
+</body>
+</html>

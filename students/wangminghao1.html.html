@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王铭颢的个人主页</title>
+    <style>
+        /* 全局样式重置和基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 容器 - 居中并限制宽度，增加立体感 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            /* 轻微的立体偏移 */
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-8px);
+        }
+
+        /* 头部区域 - 渐变背景 */
+        .header {
+            background: linear-gradient(120deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* 头像样式 - 圆形、立体边框和阴影 */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            /* 轻微旋转增加动感 */
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 内容区域 - 分块，增加间距和轻微阴影 */
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        /* 标题装饰线 - 增加立体感 */
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 8px;
+            height: 80%;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            border-radius: 4px;
+            transform: translateY(-50%);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* 标签样式 - 立体按钮效果 */
+        .tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+            /* 轻微的按压效果 */
+            transform: translateY(0);
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        /* 列表样式 - 立体圆点 */
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: -20px;
+            color: #764ba2;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(118, 75, 162, 0.3);
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+    </style>
+<style></style></head>
+
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <div class="header">
+            <!-- 头像 -->
+            <img
+                src="https://c-ssl.duitang.com/uploads/blog/202110/25/20211025183601_443aa.jpg"
+                alt="王铭颢的头像"
+                class="avatar">
+            <h1>王铭颢</h1>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="content">
+            <!-- 基本信息 -->
+            <div class="section">
+                <p><strong>班级：</strong>404班</p>
+                <p>
+                    <strong>爱好：</strong>
+                    <span class="tag">阴乐</span>
+                    <span class="tag">算数</span>
+                    <span class="tag">背单词</span>
+                </p>
+                <p><strong>座右铭：</strong>上善若水，Bite the Dust</p>
+            </div>
+
+            <!-- 个人简介 -->
+            <div class="section">
+                <h2>个人简介</h2>
+                <p>
+                    我是七年级404班的学生王铭颢，今年13岁。
+                    我对理科科目 and 英语非常感兴趣，一上这些课就high到不行。
+                </p>
+            </div>
+
+            <!-- 短期目标 -->
+            <div class="section">
+                <h2>我的短期目标</h2>
+                <ul>
+                    <li>目标一：每次过年洗新颜面地过</li>
+                    <li>目标二：在数英方面有所成就</li>
+                    <li>……</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            © 2025 王铭颢的个人主页
+        </footer>
+    </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background: linear-gradient(120deg, #74ebd5, #9face6);
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.intro {
+    color: #f0f0f0;
+    margin-bottom: 40px;
+}
+
+.student-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.student-card {
+    background: white;
+    width: 220px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.student-card:hover {
+    transform: translateY(-10px);
+}
+
+.student-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.student-card h2 {
+    margin: 15px 0 5px;
+}
+
+.student-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.student-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #4a6cf7;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.student-card a:hover {
+    background: #354ee0;
+}

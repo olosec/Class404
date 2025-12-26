@@ -1,0 +1,209 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邢书恺 - 个人主页</title>
+    <style>
+        /* 全局重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* 头部区域 */
+        .header {
+            padding: 30px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* 内容区域通用样式 */
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e3f2fd;
+        }
+
+        /* 基本信息样式 */
+        .basic-info p {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #2196f3;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 0 8px 8px 0;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        /* 列表样式 */
+        ul {
+            list-style: none;
+            padding-left: 15px;
+        }
+
+        li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* 页脚样式 */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #757575;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+    </style>
+<style></style></head>
+<body>
+    <div class="container">
+        <!-- 头部区域 -->
+        <div class="header">
+            <img
+                src="https://ts2.tc.mm.bing.net/th/id/OIP-C.IKXqexAGvrz5AXFzgSnR8gHaHW?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="邢书恺的头像"
+                class="avatar">
+            <h1>邢书恺</h1>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="content">
+            <!-- 基本信息 -->
+            <div class="section basic-info">
+                <p><strong>班级：</strong>七年级六班</p>
+                <p>
+                    <strong>爱好：</strong>
+                    <span class="tag">编程</span>
+                    <span class="tag">排球</span>
+                    <span class="tag">阅读</span>
+                </p>
+                <p><strong>座右铭：</strong>梦想总有实现的一天</p>
+            </div>
+
+            <!-- 个人简介 -->
+            <div class="section">
+                <h2>个人简介</h2>
+                <p>
+                    我是七年级六班的学生，正在学习信息技术课程。
+                    我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+                </p>
+            </div>
+
+            <!-- 短期目标 -->
+            <div class="section">
+                <h2>我的短期目标</h2>
+                <ul>
+                    <li>进入年级前一百</li>
+                    <li>提升乒乓球技能，参与班级/校级比赛</li>
+                    <li>掌握Python基础编程知识，完成小型编程项目</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            © 2025 邢书恺的个人主页
+        </footer>
+
+
+
+</body>
+</html>

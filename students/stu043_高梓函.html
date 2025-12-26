@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高梓函的个人主页</title>
+    <!-- 引入粒子动画库 -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        /* 全局样式重置与基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+        }
+
+        /* 粒子背景容器 - 紫色渐变 */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2d1b55, #4a266a, #6b368a);
+            z-index: -1;
+        }
+
+        body {
+            color: #fff;
+            line-height: 1.8;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* 标题样式 - 紫色系霓虹光效 */
+        h1 {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 3rem;
+            letter-spacing: 5px;
+            position: relative;
+            text-shadow: 0 0 10px #d9b3ff, 0 0 20px #d9b3ff, 0 0 30px #d9b3ff;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #d9b3ff, 0 0 20px #d9b3ff, 0 0 30px #d9b3ff;
+            }
+            to {
+                text-shadow: 0 0 15px #d9b3ff, 0 0 25px #d9b3ff, 0 0 35px #d9b3ff, 0 0 45px #d9b3ff;
+            }
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #d9b3ff, transparent);
+            margin: 20px auto;
+            border-radius: 2px;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+                width: 120px;
+            }
+            50% {
+                opacity: 1;
+                width: 180px;
+            }
+        }
+
+        h2 {
+            margin: 35px 0 25px;
+            font-size: 2rem;
+            padding-left: 20px;
+            border-left: 5px solid #d9b3ff;
+            text-shadow: 0 0 8px rgba(217, 179, 255, 0.8);
+            position: relative;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d9b3ff;
+            box-shadow: 0 0 10px #d9b3ff;
+        }
+
+        /* 头像样式 - 替换为花边边框+保持左旋转90度 */
+        .avatar-container {
+            text-align: center;
+            margin: 30px 0;
+            perspective: 1000px; /* 3D透视效果 */
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .avatar {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            /* 替换为花边边框 - 使用多重边框+装饰效果模拟花边 */
+            border: 8px solid transparent;
+            background: 
+                linear-gradient(#2d1b55, #2d1b55) padding-box,
+                linear-gradient(45deg, #ff99ff, #d9b3ff, #ff99ff) border-box,
+                radial-gradient(circle at 10% 20%, #ff99ff 0%, transparent 20%),
+                radial-gradient(circle at 90% 20%, #d9b3ff 0%, transparent 20%),
+                radial-gradient(circle at 10% 80%, #d9b3ff 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, #ff99ff 0%, transparent 20%);
+            background-origin: padding-box, border-box, border-box, border-box, border-box, border-box;
+            background-clip: padding-box, border-box, border-box, border-box, border-box, border-box;
+            /* 花边装饰点 */
+            box-shadow: 
+                0 0 0 2px rgba(255, 153, 255, 0.8),
+                0 0 15px #d9b3ff, 
+                0 0 30px rgba(217, 179, 255, 0.5), 
+                0 0 45px rgba(217, 179, 255, 0.3);
+            transform: rotate(-90deg); /* 保持左旋转90度 */
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        /* 增强花边效果 - 添加外层装饰点 */
+        .avatar::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ff99ff 2px, transparent 2px);
+            background-size: 15px 15px;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .avatar-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            /* 外层花边辅助边框 */
+            border: 3px solid #d9b3ff;
+            box-shadow: 0 0 20px rgba(217, 179, 255, 0.6);
+            animation: spin 10s linear infinite;
+            opacity: 0.7;
+            /* 花边纹理 */
+            background: radial-gradient(circle, #ff99ff 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        @keyframes spin {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .avatar:hover {
+            transform: rotate(-90deg) scale(1.1);
+            box-shadow: 
+                0 0 0 2px rgba(255, 200, 255, 1),
+                0 0 25px #ff99ff, 
+                0 0 40px rgba(255, 153, 255, 0.7), 
+                0 0 60px rgba(255, 153, 255, 0.5);
+            /* hover时花边变色增强 */
+            background: 
+                linear-gradient(#2d1b55, #2d1b55) padding-box,
+                linear-gradient(45deg, #ffccff, #ff99ff, #ffccff) border-box,
+                radial-gradient(circle at 10% 20%, #ffccff 0%, transparent 20%),
+                radial-gradient(circle at 90% 20%, #ff99ff 0%, transparent 20%),
+                radial-gradient(circle at 10% 80%, #ff99ff 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, #ffccff 0%, transparent 20%);
+        }
+
+        .avatar-wrapper:hover::after {
+            border-color: #ff99ff;
+            box-shadow: 0 0 25px rgba(255, 153, 255, 0.7);
+        }
+
+        /* 信息卡片样式 - 保持不变 */
+        .info-card {
+            background: rgba(45, 27, 85, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 15px rgba(217, 179, 255, 0.2);
+            border: 1px solid rgba(217, 179, 255, 0.3);
+            transition: all 0.5s ease;
+            transform: translateY(0);
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* 滚动渐入动画 */
+        .info-card:nth-child(3) { animation-delay: 0.2s; }
+        .info-card:nth-child(4) { animation-delay: 0.4s; }
+        .info-card:nth-child(5) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(217, 179, 255, 0.4);
+            border-color: rgba(217, 179, 255, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .info-card p {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 标签样式 - 保持不变 */
+        .tag {
+            display: inline-block;
+            background: linear-gradient(45deg, #d9b3ff, #b380ff);
+            color: #2d1b55;
+            padding: 8px 18px;
+            border-radius: 30px;
+            margin: 0 10px 10px 0;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(217, 179, 255, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tag::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .tag:hover {
+            transform: scale(1.1) rotate(3deg);
+            background: linear-gradient(45deg, #ff99ff, #d9b3ff);
+            box-shadow: 0 6px 15px rgba(255, 153, 255, 0.5);
+            color: #fff;
+        }
+
+        .tag:hover::after {
+            left: 100%;
+        }
+
+        /* 列表样式 - 保持不变 */
+        ul {
+            list-style: none;
+            padding-left: 30px;
+        }
+
+        ul li {
+            margin: 18px 0;
+            font-size: 1.2rem;
+            position: relative;
+            padding-left: 30px;
+            transition: transform 0.3s ease;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        ul li::before {
+            content: '⚡';
+            color: #d9b3ff;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            text-shadow: 0 0 10px #d9b3ff;
+            animation: flash 2s infinite;
+        }
+
+        @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        ul li:hover {
+            transform: translateX(10px);
+            color: #ff99ff;
+            text-shadow: 0 0 10px rgba(255, 153, 255, 0.7);
+        }
+
+        ul li:hover::before {
+            color: #ff99ff;
+            text-shadow: 0 0 15px #ff99ff;
+        }
+
+        /* 页脚样式 - 保持不变 */
+        footer {
+            text-align: center;
+            margin: 60px 0 30px;
+            font-size: 1.1rem;
+            padding-top: 25px;
+            border-top: 1px solid rgba(217, 179, 255, 0.3);
+            text-shadow: 0 0 8px rgba(217, 179, 255, 0.6);
+            animation: colorShift 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes colorShift {
+            from {
+                color: #d9b3ff;
+                text-shadow: 0 0 8px rgba(217, 179, 255, 0.6);
+            }
+            to {
+                color: #ff99ff;
+                text-shadow: 0 0 8px rgba(255, 153, 255, 0.6);
+            }
+        }
+
+        /* 响应式设计 - 保持不变 */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                letter-spacing: 3px;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .avatar {
+                width: 180px;
+                height: 180px;
+                border-width: 6px;
+                transform: rotate(-90deg); /* 保持左旋转 */
+            }
+
+            .avatar-wrapper::after {
+                width: 200px;
+                height: 200px;
+            }
+
+            .avatar:hover {
+                transform: rotate(-90deg) scale(1.1); /* 保持旋转+放大 */
+            }
+
+            .info-card {
+                padding: 25px;
+            }
+
+            .info-card p, ul li {
+                font-size: 1.1rem;
+            }
+
+            .tag {
+                padding: 6px 14px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .avatar {
+                width: 150px;
+                height: 150px;
+                border-width: 5px;
+                transform: rotate(-90deg); /* 小屏保持旋转 */
+            }
+
+            .avatar-wrapper::after {
+                width: 170px;
+                height: 170px;
+            }
+        }
+    </style>
+<style></style></head>
+
+<body>
+    <!-- 粒子背景 -->
+    <div id="particles-js"></div>
+
+    <h1>高梓函</h1>
+
+    <!-- 头像 - 花边边框+左旋转90度 -->
+    <div class="avatar-container">
+        <div class="avatar-wrapper">
+            <img
+                src="https://ts2.tc.mm.bing.net/th/id/OIP-C.2Sh3Fwg7yZ3rzDFqMCn-zAHaNL?cb=ucfimg2&ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="高梓函的头像"
+                class="avatar">
+        </div>
+    </div>
+
+    <!-- 基本信息 -->
+    <div class="info-card">
+        <p><strong>班级：</strong>七年级404班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">排球</span>
+            <span class="tag">摄像</span>
+            <span class="tag">剪辑</span>
+        </p>
+        <p><strong>座右铭：</strong>代码改变世界</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="info-card">
+        <h2>个人简介</h2>
+        <p>
+            我是七年级404班的学生，痴迷于信息技术与编程的无限可能。
+            从基础语法到创意开发，每一行代码都让我充满探索欲。
+            同时热爱排球的热血与摄像剪辑的创意表达，
+            坚信技术与热爱结合，终将实现"代码改变世界"的初心！
+        </p>
+    </div>
+
+    <!-- 短期目标 -->
+    <div class="info-card">
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>目标一：期末冲击年级前10，各科均衡突破</li>
+            <li>目标二：初中3年稳居年级前30，稳步进阶</li>
+            <li>目标三：精通Python编程语言，独立完成小项目</li>
+            <li>目标四：解锁专业摄像剪辑技巧，产出爆款作品</li>
+            <li>目标五：代表班级参加排球联赛，争创佳绩</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 高梓函的个人主页 | 以热爱为翼，以代码为刃
+    </footer>
+
+    <!-- 粒子动画配置 - 保持不变 -->
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#d9b3ff" }, // 粒子颜色淡紫色
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#d9b3ff", // 粒子连接线颜色淡紫色
+                    opacity: 0.3,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 0.8 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
+
+
+</body>
+</html>

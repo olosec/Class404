@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘相如的个人主页</title>
+    <style>
+        /* 全局样式：紫色背景、文字居中、间距重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #9370DB; /* 紫色背景（薰衣草色，柔和不刺眼） */
+            font-family: "Microsoft YaHei", 微软雅黑, sans-serif;
+            color: #333; /* 文字颜色，保证可读性 */
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto; /* 页面居中 */
+            line-height: 1.6;
+        }
+
+        /* 圆形头像样式 */
+        .avatar {
+            width: 180px; /* 头像大小 */
+            height: 180px;
+            border-radius: 50%; /* 50%圆角实现圆形 */
+            object-fit: cover; /* 保持图片比例，避免变形 */
+            border: 5px solid #fff; /* 白色边框，突出头像 */
+            margin: 20px 0;
+        }
+
+        /* 内容容器：白色背景、圆角、内边距，提升层次感 */
+        .content-wrapper {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center; /* 内容居中对齐 */
+        }
+
+        /* 标题样式 */
+        h1 {
+            color: #6A5ACD; /* 深紫色标题，呼应背景 */
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #6A5ACD;
+            font-size: 1.8em;
+            margin: 25px 0 15px;
+            border-bottom: 2px solid #E6E6FA;
+            padding-bottom: 8px;
+        }
+
+        /* 爱好标签样式 */
+        .tag {
+            background-color: #E6E6FA;
+            color: #6A5ACD;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 0 5px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        /* 基本信息样式 */
+        .info {
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+
+        /* 列表样式 */
+        ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        li {
+            background-color: #F8F8FF;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-size: 1.05em;
+        }
+
+        /* 页脚样式 */
+        footer {
+            margin-top: 30px;
+            color: #fff;
+            font-size: 0.9em;
+            padding: 15px 0;
+        }
+
+        /* 个人简介样式 */
+        .intro {
+            font-size: 1.1em;
+            color: #555;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+    </style>
+<style></style></head>
+<body>
+    <div class="content-wrapper">
+        <h1>刘相如</h1>
+
+        <!-- 头像 -->
+        <div>
+            <img
+                src="https://c-ssl.duitang.com/uploads/blog/202207/27/20220727161139_f5c8d.png"
+                alt="刘相如的头像"
+                class="avatar">
+        </div>
+
+        <!-- 基本信息 -->
+        <div class="info">
+            <p><strong>班级：</strong>七年级404班</p>
+            <p>
+                <strong>爱好：</strong>
+                <span class="tag">编程</span>
+                <span class="tag">篮球</span>
+                <span class="tag">阅读</span>
+            </p>
+            <p><strong>座右铭：</strong>代码改变世界</p>
+        </div>
+
+        <!-- 个人简介 -->
+        <div class="intro">
+            <h2>个人简介</h2>
+            <p>
+                我是七年级404班的学生，正在学习信息技术课程。
+                我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+            </p>
+        </div>
+
+        <!-- 短期目标（新增） -->
+        <div>
+            <h2>我的短期目标</h2>
+            <ul>
+                <li>目标一：这次期末考试考好</li>
+                <li>目标二：考上好高中</li>
+            </ul>
+        </div>
+
+        <footer>
+            © 2025 刘相如的个人主页
+        </footer>
+    </div>
+
+
+
+</body>
+</html>

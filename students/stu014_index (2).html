@@ -1,0 +1,367 @@
+ <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>板栗の次元纪事 | 初一生の板栗信奉者</title>
+    <!-- 引入日系字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 全局样式：清新白调+板栗棕莫兰迪色系 */
+        :root {
+            --chestnut-dark: #8B5A2B; /* 深板栗棕 */
+            --chestnut-light: #D2B48C; /* 浅板栗棕 */
+            --chestnut-pale: #E8D5B7; /* 淡板栗棕 */
+            --beige: #F9F6F0; /* 米白基底 */
+            --gray-light: #F0F0F0; /* 浅灰 */
+            --gray: #777777; /* 中性灰 */
+            --black: #333333; /* 深灰（替代纯黑，更柔和） */
+            --transition: all 0.3s ease-in-out; /* 统一过渡动效 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--beige);
+            color: var(--black);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            line-height: 1.7;
+            font-family: "Noto Sans SC", "Noto Sans JP", sans-serif; /* 中日文适配 */
+            scroll-behavior: smooth; /* 平滑滚动 */
+        }
+
+        /* 头像容器：hover动效+景深 */
+        .avatar-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 1.5rem 0;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(139, 90, 43, 0.1);
+            transition: var(--transition);
+            border: 3px solid var(--chestnut-pale);
+        }
+
+        .avatar-container:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(139, 90, 43, 0.15);
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .avatar-container:hover .avatar {
+            filter: brightness(1.1) contrast(1.05);
+        }
+
+        /* 标题样式：高级渐变+极简排版 */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, var(--chestnut-dark), var(--chestnut-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border-bottom: 1px solid rgba(139, 90, 43, 0.1);
+            padding-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--chestnut-dark);
+            margin: 0 0 2rem 0;
+            letter-spacing: 0.1em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: var(--chestnut-dark);
+            margin: 3rem 0 1.5rem 0;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 1.2rem;
+            background-color: var(--chestnut-light);
+            border-radius: 2px;
+        }
+
+        /* 标签样式：渐变背景+胶囊形+hover动效 */
+        .tag {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--chestnut-light), var(--chestnut-pale));
+            color: var(--black);
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            margin: 0.5rem 0.7rem 0.5rem 0;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(139, 90, 43, 0.1);
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 90, 43, 0.15);
+        }
+
+        /* 内容区块：极简卡片+柔和质感 */
+        .card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: 0 8px 24px rgba(139, 90, 43, 0.05);
+            border: 1px solid rgba(210, 180, 140, 0.1);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(139, 90, 43, 0.08);
+        }
+
+        /* 列表样式：自定义图标+间距优化 */
+        ul {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+
+        ul li {
+            margin: 1rem 0;
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1rem;
+        }
+
+        ul li::before {
+            content: "🌰";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        ul li:hover::before {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* 链接样式：极简高级 hover 效果 */
+        .link {
+            color: var(--chestnut-dark);
+            text-decoration: none;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .link::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--chestnut-dark);
+            transition: var(--transition);
+        }
+
+        .link:hover {
+            color: var(--chestnut-light);
+        }
+
+        .link:hover::after {
+            width: 100%;
+        }
+
+        /* 手账/歌单板块样式：网格布局+极简分隔 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .grid-item {
+            padding: 1.2rem;
+            background-color: var(--gray-light);
+            border-radius: 8px;
+            border-left: 2px solid var(--chestnut-light);
+            transition: var(--transition);
+        }
+
+        .grid-item:hover {
+            background-color: var(--chestnut-pale);
+            transform: translateY(-2px);
+        }
+
+        .grid-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: var(--chestnut-dark);
+        }
+
+        .grid-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* 页脚样式：极简+版权信息优化 */
+        footer {
+            margin-top: 5rem;
+            text-align: center;
+            color: var(--gray);
+            padding-top: 2rem;
+            border-top: 1px solid rgba(139, 90, 43, 0.1);
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 响应式：适配手机端 */
+        @media (max-width: 768px) {
+            body {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style></style></head>
+<body>
+    <h1>板栗</h1>
+    <p class="subtitle">初一生 | 板栗品鉴师 | 二次元住民</p>
+
+    <!-- 头像+社交区域：高级卡片封装 -->
+    <div class="card">
+        <div class="avatar-container">
+            <img
+                src="https://c-ssl.dtstatic.com/uploads/item/201907/09/20190709234947_GvZNE.thumb.400_0.jpeg"
+                alt="板栗的头像"
+                class="avatar">
+        </div>
+        <p>
+            <strong>社交次元：</strong>
+            <a href="#" class="link">微博@板栗毁灭世界</a>
+            <a href="#" class="link">B站@板栗の日常</a>
+            <a href="#" class="link">网易云@板栗的板栗歌单</a>
+        </p>
+    </div>
+
+    <!-- 基本信息：调整为初一四班+跑步相关 -->
+    <div class="card">
+        <p><strong>坐标：</strong>魔都·市西中学 | 初一（4）班 | 最后一排靠窗位</p>
+        <p>
+            <strong>本命属性：</strong>
+            <span class="tag">专业板栗品鉴师（自封）</span>
+            <span class="tag">家庭烘焙·烤板栗专精</span>
+            <span class="tag">二次元硬核住民</span>
+            <span class="tag">校田径队·跑步选手</span>
+            <span class="tag">City Walk·板栗探店达人</span>
+        </p>
+        <p><strong>人生信条：</strong>板栗の神 ≧ 一切 | 动漫与板栗，是对抗平庸的解药</p>
+    </div>
+
+    <!-- 个人简介：调整跑步相关描述 -->
+    <div class="card">
+        <h2>关于我</h2>
+        <p>
+            初一牲一枚，生长在魔都的梧桐巷弄里。日常是被数学卷到崩溃，却能在放学路上的板栗摊找到救赎的普通初一学生。<br>
+            上课摸鱼时在草稿本画板栗拟人，放学冲去老字号买糖炒栗，周末窝在房间里：左手烤板栗，右手动漫手柄，耳机里放着日系摇滚。<br>
+            校田径队的跑步选手，主打一个“短跑爆发力随缘，长跑耐力拉满”，但跑完步的奖励永远是买一袋热乎的板栗。<br>
+            偏执地认为，世间所有美好都该和板栗绑定——动漫的ED配板栗蛋糕，漫展的cos带板栗配饰，甚至连日记本的书签都是板栗形状。<br>
+            梦想是在巷口开一家「板栗次元馆」，一半是现烤板栗的香气，一半是动漫周边的陈列，让同好们有处可栖。
+        </p>
+
+        <!-- 板栗品鉴清单（保留） -->
+        <div class="grid" style="margin-top: 2rem;">
+            <div class="grid-item">
+                <h3>★ 板栗品鉴TOP1：老字号糖炒栗</h3>
+                <p>地址：静安寺旁的老巷弄，开了三十年的老店。板栗选的是迁西油栗，外壳焦脆，内里绵密，甜度刚好不齁，冬天揣在口袋里暖手又暖胃。</p>
+            </div>
+            <div class="grid-item">
+                <h3>★ 板栗品鉴TOP2：自制蜂蜜烤板栗</h3>
+                <p>配方：迁西栗+土蜂蜜+黄油+少许海盐。烤箱180℃烤20分钟，外壳微焦，果肉吸满蜂蜜的甜，海盐中和腻感，是周末的治愈标配。</p>
+            </div>
+            <div class="grid-item">
+                <h3>★ 板栗品鉴TOP3：日式板栗蒙布朗</h3>
+                <p>探店：武康路的日系甜品店。栗子泥是手工熬制的，没有添加香精，搭配淡奶油和酥皮，一口下去是秋天的味道。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 短期目标：保留核心，适配初一身份 -->
+    <div class="card">
+        <h2>近期FLAG</h2>
+        <ul>
+            <li>入手一台日式铸铁板栗烤炉，实现板栗烘焙自由（已攒够80%的钱）</li>
+            <li>完成《板栗拟人》系列插画，投稿至B站绘画区（目前画了3张）</li>
+            <li>期中考试数学突破90分（老妈的板栗禁令是第一生产力）</li>
+            <li>漫展cos《鬼灭之刃》栗花落香奈乎+板栗配饰（信仰联动）</li>
+            <li>整理「板栗+动漫」歌单，上传至网易云（已收录50首日系曲目）</li>
+            <li>带同桌完成第一次板栗探店（同化计划：从甜炒栗开始）</li>
+        </ul>
+    </div>
+
+    <!-- 板栗手账板块：调整跑步相关场景 -->
+    <div class="card">
+        <h2>板栗手账·次元碎片</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <h3>2025.10.01 | 国庆探店</h3>
+                <p>去了苏州的百年板栗店，买了板栗酥和板栗糕。路上看到穿JK的女生抱着板栗玩偶，瞬间灵感爆发，画了新的板栗拟人稿。</p>
+            </div>
+            <div class="grid-item">
+                <h3>2025.09.15 | 校运会赛后</h3>
+                <p>赢了初一组800米跑，老妈奖励了十斤迁西油栗。队友说我的板栗补给比我的跑步速度更让人印象深刻，扎心但无法反驳。</p>
+            </div>
+            <div class="grid-item">
+                <h3>2025.09.01 | 开学日</h3>
+                <p>给同桌带了自制烤板栗，他说“这玩意比开学礼物强一百倍”。同化计划，初步成功。</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 板栗の次元纪事 | 禁止盗图/盗板栗（违者请我吃十斤迁西油栗）
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Designed by 板栗 | Powered by 板栗信仰</p>
+    </footer>
+
+
+
+</body>
+</html>

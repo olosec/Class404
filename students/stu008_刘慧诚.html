@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘慧诚 - 个人主页</title>
+    <!-- 引入外部字体（可选，提升美观度） -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* 全局样式重置和基础设置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif; /* 中文友好字体 */
+            line-height: 1.6;
+            color: #333; /* 主文字颜色 */
+            background-color: #f8f9fa; /* 浅灰色背景，更护眼 */
+            max-width: 800px; /* 限制页面宽度，避免太宽 */
+            margin: 0 auto; /* 居中显示 */
+            padding: 20px;
+        }
+
+        /* 标题样式 */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2.2rem;
+        }
+
+        h2 {
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e74c3c; /* 红色下划线，突出标题 */
+        }
+
+        /* 头像样式 */
+        .avatar-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .avatar {
+            width: 150px; /* 统一头像大小 */
+            height: 150px;
+            border-radius: 50%; /* 圆形头像 */
+            border: 4px solid #fff; /* 白色边框 */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 轻微阴影，提升立体感 */
+            object-fit: cover; /* 保证图片比例 */
+        }
+
+        /* 基本信息区域 */
+        .basic-info {
+            background-color: #fff; /* 白色背景 */
+            padding: 20px;
+            border-radius: 8px; /* 圆角 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .basic-info p {
+            margin: 10px 0;
+            font-size: 1.05rem;
+        }
+
+        /* 标签样式（爱好） */
+        .tag {
+            display: inline-block;
+            background-color: #3498db; /* 蓝色标签 */
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 20px; /* 圆角标签 */
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* 座右铭样式 */
+        .motto {
+            font-style: italic; /* 斜体 */
+            color: #7f8c8d;
+            margin-top: 15px !important;
+        }
+
+        /* 简介和目标区域 */
+        .intro, .goals {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .goals ul {
+            list-style-type: none; /* 去掉默认列表样式 */
+            padding-left: 10px;
+        }
+
+        .goals li {
+            margin: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        /* 列表项自定义图标 */
+        .goals li::before {
+            content: "🎯"; /* 目标图标 */
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #95a5a6;
+            font-size: 0.9rem;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+<style></style></head>
+
+<body>
+    <!-- 标题 -->
+    <h1>刘慧诚的个人主页</h1>
+
+    <!-- 头像 -->
+    <div class="avatar-container">
+        <img
+            src="https://ts1.tc.mm.bing.net/th/id/OIP-C._6O69SPY9Vmggy0b5ZbcUgHaHa?w=198&h=198&c=8&rs=1&qlt=90&o=6&cb=ucfimg1&pid=3.1&rm=2&ucfimg=1"
+            alt="刘慧诚的头像"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div class="basic-info">
+        <p><strong>班级：</strong>七年级六班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">书法</span>
+            <span class="tag">篮球</span>
+            <span class="tag">阅读</span>
+        </p>
+        <p class="motto"><strong>座右铭：</strong>别人怎样看你，和你毫无关系。你要怎样活，也和别人毫无关系</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="intro">
+        <h2>个人简介</h2>
+        <p>
+            我是七年级六班的学生，正在学习打篮球。
+            我对篮球非常感兴趣，希望通过不断学习提升自己的能力。
+        </p>
+    </div>
+
+    <!-- 短期目标 -->
+    <div class="goals">
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>目标一：考进年级前100名</li>
+            <li>目标二：考进年级前50名</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 刘慧诚的个人主页
+    </footer>
+
+
+
+</body>
+</html>
+

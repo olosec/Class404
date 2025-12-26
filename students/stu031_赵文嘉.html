@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵文嘉的个人主页</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        /* 页面背景和基础样式 */
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 容器布局 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 0 50px rgba(0, 246, 255, 0.15);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 装饰元素 */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(74, 222, 128, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .container::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -30%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, #4ade80, #38bdf8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 20px rgba(74, 222, 128, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #e0f2fe;
+            border-left: 4px solid #38bdf8;
+            padding-left: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 头像样式 */
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(56, 189, 248, 0.5);
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+            transition: all 0.5s ease;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 0 40px rgba(74, 222, 128, 0.5);
+            border-color: rgba(74, 222, 128, 0.7);
+        }
+
+        /* 基本信息样式 */
+        .info-section {
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #cbd5e1;
+        }
+
+        strong {
+            color: #f0f9ff;
+        }
+
+        /* 标签样式 */
+        .tag {
+            display: inline-block;
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin: 0 0.5rem 0.5rem 0;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(56, 189, 248, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(56, 189, 248, 0.4);
+        }
+
+        /* 列表样式 */
+        ul {
+            list-style: none;
+            margin-left: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-size: 1.2rem;
+        }
+
+        /* 页脚样式 */
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            color: #94a3b8;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .avatar {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        /* 滚动条美化 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4ade80;
+        }
+    </style>
+<style></style></head>
+<body>
+    <div class="container">
+        <h1>赵文嘉</h1>
+
+        <!-- 头像 -->
+        <div>
+            <img
+                src="https://c-ssl.duitang.com/uploads/blog/202308/10/WXSbLJy4SQjYpn1.jpg"
+                alt="赵文嘉的头像"
+                class="avatar">
+        </div>
+
+        <!-- 基本信息 -->
+        <div class="info-section">
+            <p><strong>班级：</strong>七年级404班</p>
+            <p>
+                <strong>爱好：</strong>
+                <span class="tag">画画</span>
+                <span class="tag">弹电子琴</span>
+                <span class="tag">阅读</span>
+            </p>
+            <p><strong>座右铭：</strong>世上无难事，只要肯攀登</p>
+        </div>
+
+        <!-- 个人简介 -->
+        <div>
+            <h2>个人简介</h2>
+            <p>
+                我是七年级404班的学生，正在学习信息技术课程。
+                我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+            </p>
+        </div>
+
+        <!-- 短期目标 -->
+        <div>
+            <h2>我的短期目标</h2>
+            <ul>
+                <li>掌握基础编程知识，能独立完成简单的编程项目</li>
+                <li>提升计算机操作技能，熟练使用办公软件</li>
+                <li>参加学校的信息技术竞赛，取得好成绩</li>
+                <li>阅读更多编程相关书籍，拓展知识面</li>
+            </ul>
+        </div>
+
+        <footer>
+            © 2025 赵文嘉的个人主页
+        </footer>
+    </div>
+
+
+
+</body>
+</html>

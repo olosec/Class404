@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李启萌的个人主页</title>
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+        }
+
+        /* 页面整体样式 */
+        body {
+            background-color: #f0f8ff; /* 淡蓝色背景 */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 头部标题样式 */
+        h1 {
+            color: #1a73e8; /* 主蓝色 */
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            border-bottom: 3px solid #4285f4;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #0d47a1; /* 深蓝色 */
+            margin: 25px 0 15px;
+            font-size: 1.8rem;
+            border-left: 5px solid #2196f3;
+            padding-left: 10px;
+        }
+
+        /* 头像样式 */
+        .avatar-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #bbdefb; /* 浅蓝边框 */
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+        }
+
+        /* 基本信息样式 */
+        .info-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border-top: 4px solid #2196f3;
+        }
+
+        .info-container p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+
+        /* 标签样式 */
+        .tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin: 0 5px 5px 0;
+            font-size: 0.9rem;
+            border: 1px solid #bbdefb;
+        }
+
+        /* 简介和目标样式 */
+        .intro-container, .goals-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .goals-container ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .goals-container li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .goals-container li::before {
+            content: "✓";
+            color: #2196f3;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 页脚样式 */
+        footer {
+            text-align: center;
+            color: #64b5f6;
+            padding: 20px;
+            font-size: 0.9rem;
+            background-color: #f5fafe;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .avatar {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+<style></style></head>
+<body>
+    <h1>李启萌</h1>
+
+    <!-- 头像 -->
+    <div class="avatar-container">
+        <img
+            src="https://www.keaitupian.cn/cjpic/frombd/2/253/3866885721/3656396475.jpg"
+            alt="李启萌的头像"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div class="info-container">
+        <p><strong>班级：</strong>七年级一班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">画画</span>
+            <span class="tag">篮球</span>
+            <span class="tag">阅读</span>
+        </p>
+        <p><strong>座右铭：</strong>代码改变世界</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="intro-container">
+        <h2>个人简介</h2>
+        <p>
+            我是七年级一班的学生，正在学习信息技术课程。
+            我对计算机和编程非常感兴趣，希望通过不断学习提升自己的能力。
+        </p>
+    </div>
+
+    <!-- 短期目标 -->
+    <div class="goals-container">
+        <h2>我的短期目标</h2>
+        <ul>
+            <li>熟练掌握HTML和CSS基础语法</li>
+            <li>完成一个个人网页作品</li>
+            <li>学习JavaScript入门知识</li>
+            <li>参加学校的编程兴趣小组</li>
+        </ul>
+    </div>
+
+    <footer>
+        © 2025 李启萌的个人主页
+    </footer>
+
+
+
+</body>
+</html>

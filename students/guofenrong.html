@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郭奋荣的个人主页</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Comic Sans MS", "幼圆", "微软雅黑", sans-serif;
+        }
+
+        body {
+            background-color: #fdf2f8;
+            background-image: 
+                radial-gradient(#fbb6ce 2px, transparent 2px),
+                radial-gradient(#fbb6ce 2px, #fdf2f8 2px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 标题样式 */
+        h1 {
+            color: #e53e3e;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px #fcc2d7;
+            animation: bounce 2s infinite;
+        }
+
+        h2 {
+            color: #c53030;
+            margin: 20px 0 10px;
+            border-bottom: 3px dotted #faa2c1;
+            padding-bottom: 8px;
+            font-size: 1.8rem;
+        }
+
+        /* 头像样式 */
+        .avatar {
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 8px solid #fcc2d7;
+            box-shadow: 0 0 20px #faa2c1;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05) rotate(3deg);
+        }
+
+        /* 基本信息样式 */
+        .info {
+            background-color: #fff5f7;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 3px solid #faa2c1;
+            box-shadow: 0 8px 15px rgba(250, 162, 193, 0.2);
+        }
+
+        .info p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #2d3748;
+            margin: 10px 0;
+        }
+
+        .info strong {
+            color: #e53e3e;
+        }
+
+        /* 标签样式 */
+        .tag {
+            display: inline-block;
+            background-color: #fcc2d7;
+            color: #e53e3e;
+            padding: 5px 15px;
+            border-radius: 50px;
+            margin: 0 5px;
+            font-weight: bold;
+            border: 2px solid #e53e3e;
+        }
+
+        /* 个人简介样式 */
+        .intro {
+            background-color: #fff5f7;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 3px solid #faa2c1;
+            box-shadow: 0 8px 15px rgba(250, 162, 193, 0.2);
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #2d3748;
+            text-indent: 2em;
+        }
+
+        /* 目标列表样式 */
+        .goals {
+            background-color: #fff5f7;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 3px solid #faa2c1;
+            box-shadow: 0 8px 15px rgba(250, 162, 193, 0.2);
+        }
+
+        .goals ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .goals li {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #2d3748;
+            margin: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .goals li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        /* 动画效果 */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .avatar {
+                width: 150px;
+                height: 150px;
+            }
+            .info p, .intro p, .goals li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>✨ 郭奋荣的个人主页 ✨</h1>
+
+    <!-- 头像 -->
+    <div>
+        <img
+            src="https://c-ssl.duitang.com/uploads/blog/202403/22/DWSV9dlbtdgaX7m.jpg"
+            alt="郭奋荣的头像"
+            class="avatar">
+    </div>
+
+    <!-- 基本信息 -->
+    <div class="info">
+        <p><strong>班级：</strong>七年级404班</p>
+        <p>
+            <strong>爱好：</strong>
+            <span class="tag">画画</span>
+            <span class="tag">阅读</span>
+        </p>
+        <p><strong>座右铭：</strong>没有友谊，世界仿佛失去太阳</p>
+    </div>
+
+    <!-- 个人简介 -->
+    <div class="intro">
+        <h2>💖 个人简介 💖</h2>
+        <p>
+            我是七年级404班的学生，正在学习知识。
+            我对美术非常感兴趣，希望通过不断学习提升自己的能力。
+        </p>
+    </div>
+
+    <!-- 短期目标 -->
+    <div class="goals">
+        <h2>🎯 我的短期目标 🎯</h2>
+        <ul>
+            <li>期末考试取得好成绩</li>
+            <li>提升画画技巧，完成10幅满意的作品</li>
+            <li>读完5本喜欢的课外书</li>
+            <li>和同学们建立更深厚的友谊</li>
+        </ul>
+    </div>
+
+
+
+</body>
+</html>
